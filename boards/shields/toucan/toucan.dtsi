@@ -107,12 +107,12 @@
         compatible = "zmk,input-listener";
         status = "disabled";
         device = <&glidepoint_split>;
-        input-processors = <&zip_x_scaler 125 100>, <&zip_y_scaler 225 100>;
+        input-processors = <&zip_x_scaler 125 100>, <&zip_y_scaler 250 100>;
         scroller {
             layers = <2>;
             input-processors = <
                 &zip_xy_to_scroll_mapper
-                &zip_scroll_scaler 1 5
+                &zip_scroll_scaler 4 25
                 &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
             >;
         };
