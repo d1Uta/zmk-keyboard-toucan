@@ -48,8 +48,8 @@
             display-name = "SYM";
             bindings = <
                 &kp TAB   &kp N1    &kp N2    &kp N3    &kp N4    &kp N5      &kp N6    &kp N7    &kp KP_MULTIPLY &kp N9    &kp N0   &kp BSPC
-                &kp LCTRL &kp LC(A) &kp LC(S) &trans    &trans    &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT  &kp BSLH &kp GRAVE
-                &kp LSHFT &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp LC(B)   &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT  &kp BSLH &kp GRAVE
+                &kp LCTRL &kp LG(A) &kp LG(S) &trans    &trans    &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT  &kp BSLH &kp GRAVE
+                &kp LSHFT &kp LG(Z) &kp LG(X) &kp LG(C) &kp LG(V) &kp LG(B)   &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT  &kp BSLH &kp GRAVE
                                  &kp LGUI &trans &kp SPACE        &mkp RCLK &trans &kp RALT
             >;
         };
