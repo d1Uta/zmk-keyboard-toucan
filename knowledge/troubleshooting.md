@@ -16,6 +16,13 @@
 - **原因**: 非 ASCII 文字のエンコーディング不整合。
 - **解決策**: 自動実行スクリプトからは日本語コメントを除去し、ASCII のみで構成する。
 
+### 構文エラー (ParserError)
+- **事象**: `if not exist ...` 等のコマンドが `MissingOpenParenthesisInIfStatement` で失敗する。
+- **原因**: PowerShell の `if` 文は `if (...) { ... }` の形式である必要があるが、CMD スタイルの構文を直接実行してしまった。
+- **解決策**: PowerShell では以下の形式を徹底するか、`cmd /c` を介して実行する。
+    - 形式: `if (Test-Path <path>) { ... }`
+    - ワンライナー: `if (!(Test-Path config/onishi)) { mkdir config/onishi }`
+
 ## 2. Python (Scripting & Automation)
 
 ### パス操作 (Windows/Unix)
@@ -59,7 +66,13 @@
   2. OS 側の Bluetooth 設定からデバイスを削除（Forget device）する。
   3. 再度ペアリングを試行する。
 
-### 同期スクリプトの不整合
-- **事象**: `set-agent` 実行時に「既に存在するファイルを作成することはできません」と怒られる。
-- **原因**: 既存のジャンクションが適切に削除・上書きされていない。
 - **解決策**: ジャンクションのみを安全に解除するために `cmd /c "rd <path>"` を使用し、管理者権限が必要なシンボリックリンクではなく `Copy-Item` を検討する。
+
+## 5. Antigravity Tool Usage
+
+### ファイル編集時の不一致 (targetContent not found)
+- **事象**: `replace_file_content` や `multi_replace_file_content` が失敗する。
+- **原因**: 直前の `view_file` から時間が経過しており、ファイル内容が（他のツールやユーザーによって）変更されていた、あるいはコピーミス。
+- **解決策**:
+    - 大規模な置換を行う前には、必ず最新の `view_file` を実行し、`TargetContent` をコピー＆ペーストして正確性を期すこと。
+    - 文字列の「揺らぎ」を防ぐため、可能な限り行番号（StartLine/EndLine）を併用する。

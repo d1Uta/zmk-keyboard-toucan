@@ -3,4 +3,19 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - variant: mac_onishi
+            path: config/mac/onishi
+          - variant: mac_qwerty
+            path: config/mac/qwerty
+          - variant: win_onishi
+            path: config/win/onishi
+          - variant: win_qwerty
+            path: config/win/qwerty
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3
+    with:
+      config_path: ${{ matrix.path }}
+      artifact_name: toucan_${{ matrix.variant }}
