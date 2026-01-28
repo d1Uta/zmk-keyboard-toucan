@@ -18,4 +18,4 @@ jobs:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3
     with:
       config_path: ${{ matrix.path }}
-      artifact_name: toucan_${{ matrix.variant }}
+      archive_name: toucan_${{ matrix.variant }}
