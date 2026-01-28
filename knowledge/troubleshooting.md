@@ -23,6 +23,11 @@
     - 形式: `if (Test-Path <path>) { ... }`
     - ワンライナー: `if (!(Test-Path config/onishi)) { mkdir config/onishi }`
 
+### 引数エラー (System Tokens)
+- **事象**: `Copy-Item : 引数 'pupil' を受け入れる位置指定パラメーターが見つかりません。` 等のエラー。
+- **原因**: システム（プロンプト等）から注入されたパディングトークン（"pupil" 等）を誤ってコマンドラインに含めて実行してしまった。
+- **解決策**: コマンド実行前に、不要な文字列（特にプロンプト末尾のパディング等）が混入していないか目視確認を徹底する。
+
 ## 2. Python (Scripting & Automation)
 
 ### パス操作 (Windows/Unix)
@@ -76,3 +81,12 @@
 - **解決策**:
     - 大規模な置換を行う前には、必ず最新の `view_file` を実行し、`TargetContent` をコピー＆ペーストして正確性を期すこと。
     - 文字列の「揺らぎ」を防ぐため、可能な限り行番号（StartLine/EndLine）を併用する。
+
+### Git 操作の不整合
+- **事象**: `error: failed to push some refs to ...` (Updates were rejected because the remote contains work that you do not have locally).
+- **原因**: 他のエージェントやユーザーがリモートリポジトリを更新しており、ローカルの状態が古くなっている。
+- **解決策**: 
+    1. `git fetch origin` で最新状態を取得。
+    2. `git rebase origin/main` で自身のコミットを最新の先端に載せ替える。
+    3. 再度 `git push origin main` を実行する。
+    - ※ 競合が発生した場合は、手動で解消した後に `git rebase --continue` を行う。
