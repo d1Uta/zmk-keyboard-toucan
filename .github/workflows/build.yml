@@ -6,5 +6,5 @@ jobs:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
       config_path: zmk_config
-      build_matrix_path: "load('zmk_config/build.yaml')"
+      build_matrix_path: 'load("zmk_config/build.yaml")'
       archive_name: toucan_firmware
