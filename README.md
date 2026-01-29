@@ -44,12 +44,12 @@
 | **Thumb** | | | LGUI | (trans) | LCLK | | | RCLK | SYM | LALT | | | |
 
 ### Sym Layer (共通)
-記号入力と、左手側に配置されたダイレクトショートカットキーを担当します。Win 用は `LC` (Ctrl)、Mac 用は `LG` (Command) が自動的に適用されます。
+記号入力と、左手側に配置されたダイレクトショートカットキーを担当します。Win 用と Mac 用で修飾キーが最適化されています。
 | row | 1 | 2 | 3 | 4 | 5 | 6 | | 7 | 8 | 9 | 10 | 11 | 12 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| **Top** | TAB | 1 | 2 | 3 | 4 | 5 | | 6 | 7 | * | 9 | 0 | DEL |
+| **Top** | TAB | ! | @ | # | $ | % | | ^ | & | * | ( | ) | BSPC |
 | **Home** | LCTRL | SelectAll | Save | (trans) | (trans) | (trans) | | - | = | [ | ] | \ | ` |
-| **Bottom** | LSHFT | Undo | Cut | Copy | Paste | Bold | | / | \ | [ | ] | \ | ` |
+| **Bottom** | LSHFT | Undo | Cut | Copy | Paste | Bold | | _ | + | { | } | \| | ~ |
 | **Thumb** | | | LGUI | (trans) | SPC | | | RCLK | (trans) | RALT | | | |
 
 ### Adj Layer (共通)
