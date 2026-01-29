@@ -2,20 +2,8 @@ name: Build ZMK firmware
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - variant: mac_onishi
-            path: mac_onishi
-          - variant: mac_qwerty
-            path: mac_qwerty
-          - variant: win_onishi
-            path: win_onishi
-          - variant: win_qwerty
-            path: win_qwerty
+  build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
-      config_path: ${{ matrix.path }}
-      build_matrix_path: ${{ matrix.path }}/build.yaml
-      archive_name: toucan_${{ matrix.variant }}
+      config_path: .
+      archive_name: toucan_firmware
