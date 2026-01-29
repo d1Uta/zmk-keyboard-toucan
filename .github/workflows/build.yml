@@ -13,6 +13,6 @@ jobs:
           - variant: win_qwerty
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
-      config_path: config/${{ matrix.variant }}
-      build_matrix_path: config/${{ matrix.variant }}/build.yaml
+      config_path: ${{ matrix.variant }}
+      build_matrix_path: ${{ matrix.variant }}/build.yaml
       archive_name: toucan_${{ matrix.variant }}
