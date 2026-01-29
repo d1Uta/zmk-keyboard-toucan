@@ -90,3 +90,9 @@
     2. `git rebase origin/main` で自身のコミットを最新の先端に載せ替える。
     3. 再度 `git push origin main` を実行する。
     - ※ 競合が発生した場合は、手動で解消した後に `git rebase --continue` を行う。
+
+### CI エラー：Invalid input, artifact_name is not defined
+- **事象**: CI ビルドが `Invalid input, artifact_name is not defined in the referenced workflow` で失敗する。
+- **原因**: `zmk/.github/workflows/build-user-config.yml` が `artifact_name` という引数を持っておらず、正しくは `archive_name` であるため。
+- **解決策**: ワークフローファイルの `with:` セクションで `archive_name` を使用する。
+- **再発防止策**: 外部の再利用可能ワークフローを使用する際は、必ず最新のリポジトリまたはドキュメントを確認し、定義されている引数（`inputs`）を正確に把握すること。
