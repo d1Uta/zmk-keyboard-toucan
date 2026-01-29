@@ -3,8 +3,20 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - variant: mac_onishi
+            path: zmk_config/mac_onishi
+          - variant: mac_qwerty
+            path: zmk_config/mac_qwerty
+          - variant: win_onishi
+            path: zmk_config/win_onishi
+          - variant: win_qwerty
+            path: zmk_config/win_qwerty
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
-      config_path: zmk_config
-      build_matrix_path: '.|load("build.yaml")'
-      archive_name: toucan_firmware
+      config_path: ${{ matrix.path }}
+      build_matrix_path: ${{ matrix.path }}/build.yaml
+      archive_name: toucan_${{ matrix.variant }}
