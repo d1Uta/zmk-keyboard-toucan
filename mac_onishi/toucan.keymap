@@ -24,7 +24,7 @@
 
         // BASE レイヤー: 大西配列 (o24)
         base {
-            display-name = "o24-mac";
+            display-name = "o24 MAC";
             bindings = <
                 &kp TAB   &kp Q &kp L &kp U &kp COMMA &kp DOT   &kp F &kp W  &kp R     &kp Y   &kp P    &kp BSPC
                 &kp LCTRL &kp E &kp I &kp A &kp O     &kp MINUS &kp K &kp T  &kp N     &kp S   &kp H    &kp SQT
@@ -47,7 +47,7 @@
         sym {
             display-name = "SYM";
             bindings = <
-                &kp TAB   &kp N1    &kp N2    &kp N3    &kp N4    &kp N5      &kp N6    &kp N7    &kp KP_MULTIPLY &kp N9    &kp N0   &kp BSPC
+                &kp TAB   &kp N1    &kp N2    &kp N3    &kp N4    &kp N5      &kp N6    &kp N7    &kp KP_MULTIPLY &kp N9    &kp N0   &kp DEL
                 &kp LCTRL &kp LG(A) &kp LG(S) &trans    &trans    &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT  &kp BSLH &kp GRAVE
                 &kp LSHFT &kp LG(Z) &kp LG(X) &kp LG(C) &kp LG(V) &kp LG(B)   &kp SLASH &kp BSLH  &kp LBKT        &kp RBKT  &kp BSLH &kp GRAVE
                                  &kp LGUI &trans &kp SPACE        &mkp RCLK &trans &kp RALT

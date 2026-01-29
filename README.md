@@ -47,7 +47,7 @@
 記号入力と、左手側に配置されたダイレクトショートカットキーを担当します。Win 用は `LC` (Ctrl)、Mac 用は `LG` (Command) が自動的に適用されます。
 | row | 1 | 2 | 3 | 4 | 5 | 6 | | 7 | 8 | 9 | 10 | 11 | 12 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| **Top** | TAB | 1 | 2 | 3 | 4 | 5 | | 6 | 7 | * | 9 | 0 | BSPC |
+| **Top** | TAB | 1 | 2 | 3 | 4 | 5 | | 6 | 7 | * | 9 | 0 | DEL |
 | **Home** | LCTRL | SelectAll | Save | (trans) | (trans) | (trans) | | - | = | [ | ] | \ | ` |
 | **Bottom** | LSHFT | Undo | Cut | Copy | Paste | Bold | | / | \ | [ | ] | \ | ` |
 | **Thumb** | | | LGUI | (trans) | SPC | | | RCLK | (trans) | RALT | | | |
@@ -83,10 +83,10 @@ input-processors = <&zip_x_scaler 188 100>, <&zip_y_scaler 250 100>;
 ## 📂 フォルダ構成
 OS や配列の好みに応じて `config/` 以下のファイルを切り替えてビルド可能です。
 
-- `mac_onishi/`: Mac 用大西配列 (**o24-mac**)
-- `mac_qwerty/`: Mac 用 QWERTY (**QWTY-MAC**)
-- `win_onishi/`: Windows 用大西配列 (**o24-w**)
-- `win_qwerty/`: Windows 用 QWERTY (**QWTY-W**)
+- `mac_onishi/`: Mac 用大西配列 (**o24 MAC**)
+- `mac_qwerty/`: Mac 用 QWERTY (**QWTY MAC**)
+- `win_onishi/`: Windows 用大西配列 (**o24 W**)
+- `win_qwerty/`: Windows 用 QWERTY (**QWTY W**)
 
 ---
 
