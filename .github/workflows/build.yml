@@ -8,13 +8,13 @@ jobs:
       matrix:
         include:
           - variant: mac_onishi
-            path: config/mac_onishi
+            path: mac_onishi
           - variant: mac_qwerty
-            path: config/mac_qwerty
+            path: mac_qwerty
           - variant: win_onishi
-            path: config/win_onishi
+            path: win_onishi
           - variant: win_qwerty
-            path: config/win_qwerty
+            path: win_qwerty
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3
     with:
       config_path: ${{ matrix.path }}

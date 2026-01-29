@@ -21,4 +21,4 @@ manifest:
       remote: caksoylar
       revision: main
   self:
-    path: config
+    path: mac_qwerty

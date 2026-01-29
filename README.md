@@ -56,10 +56,10 @@ input-processors = <&zip_x_scaler 188 100>, <&zip_y_scaler 250 100>;
 ## 📂 フォルダ構成
 OS や配列の好みに応じて `config/` 以下のファイルを切り替えてビルド可能です。
 
-- `config/mac_onishi/`: Mac 用大西配列 (Command ショートカット)
-- `config/mac_qwerty/`: Mac 用 QWERTY (Command ショートカット)
-- `config/win_onishi/`: Windows 用大西配列 (Ctrl ショートカット)
-- `config/win_qwerty/`: Windows 用 QWERTY (Ctrl ショートカット)
+- `mac_onishi/`: Mac 用大西配列 (Command ショートカット)
+- `mac_qwerty/`: Mac 用 QWERTY (Command ショートカット)
+- `win_onishi/`: Windows 用大西配列 (Ctrl ショートカット)
+- `win_qwerty/`: Windows 用 QWERTY (Ctrl ショートカット)
 
 ---
 
