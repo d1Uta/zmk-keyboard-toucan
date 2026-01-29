@@ -18,4 +18,5 @@ jobs:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
       config_path: ${{ matrix.path }}
+      build_matrix_path: ${{ matrix.path }}/build.yaml
       archive_name: toucan_${{ matrix.variant }}
