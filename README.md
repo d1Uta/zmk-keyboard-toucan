@@ -7,8 +7,8 @@
 1.  **デフォルト配列の変更**: QWERTY から **o24 (大西配列)** へ変更しました。
 2.  **SYM レイヤーの挙動修正**: 
     - 以前の Mod-tap (長押しで Ctrl) を廃止。
-    - 単体押しで `Ctrl + Key` が即座に発行されるダイレクトショートカット方式に変更。
-    - Win 用 (Ctrl) と Mac 用 (Command/GUI) の両方の設定を同梱。
+    - 単体押しで `Ctrl + Key` (Win) または `Cmd + Key` (Mac) が即座に発行されるダイレクトショートカット方式に変更。
+    - Win 用 (Ctrl) と Mac 用 (Command/GUI) の設定を分離して最適化。
 3.  **NAV レイヤーの改善**: 右手側の操作性を考慮し、中指上段の `Backspace` を `Delete` に変更しました。
 4.  **トラックパッド感度の向上**: デフォルトより高速に移動できるよう調整済みです。
 
@@ -16,23 +16,50 @@
 
 ## ⌨️ キーマップ・レイアウト
 
+本リポジトリには複数のバリアント（Mac/Win, 大西配列/QWERTY）が含まれていますが、**NAV, SYM, ADJ レイヤーは全バリアントで共通の設計**となっています。
+
 ### Base Layer: o24 (Onishi Layout)
 | row | 1 | 2 | 3 | 4 | 5 | 6 | | 7 | 8 | 9 | 10 | 11 | 12 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | **Top** | TAB | Q | L | U | , | . | | F | W | R | Y | P | BSPC |
 | **Home** | LCTRL | E | I | A | O | - | | K | T | N | S | H | SQT |
 | **Bottom** | LSHFT | Z | X | C | V | ; | | G | D | M | J | B | ESC |
-| **Thumb** | | | | LGUI | NAV | SPC | | RET | SYM | RALT | | |
+| **Thumb** | | | LGUI | NAV | SPC | | | RET | SYM | RALT | | | |
 
-### Shortcut Keys (SYM Layer)
-作業効率を高めるため、以下のキーに `LC` (Win/Linux) または `LG` (Mac) 修飾のショートカットを割り当てています。
-- `SYM + A`: Select All
-- `SYM + S`: Save
-- `SYM + Z`: Undo
-- `SYM + X`: Cut
-- `SYM + C`: Copy
-- `SYM + V`: Paste
-- `SYM + B`: Bold (等)
+### Base Layer: QWERTY
+| row | 1 | 2 | 3 | 4 | 5 | 6 | | 7 | 8 | 9 | 10 | 11 | 12 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| **Top** | TAB | Q | W | E | R | T | | Y | U | I | O | P | BSPC |
+| **Home** | LCTRL | A | S | D | F | G | | H | J | K | L | ; | SQT |
+| **Bottom** | LSHFT | Z | X | C | V | B | | N | M | , | . | / | ESC |
+| **Thumb** | | | LGUI | NAV | SPC | | | RET | SYM | RALT | | | |
+
+### Nav Layer (共通)
+カーソル移動や数字入力を担当します。
+| row | 1 | 2 | 3 | 4 | 5 | 6 | | 7 | 8 | 9 | 10 | 11 | 12 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| **Top** | ESC | 1 | 2 | 3 | 4 | 5 | | 6 | 7 | 8 | 9 | 0 | DEL |
+| **Home** | LCTRL | (trans) | (trans) | (trans) | (trans) | (trans) | | LEFT | DOWN | UP | RIGHT | (trans) | (trans) |
+| **Bottom** | LSHFT | UNLOCK | (trans) | (trans) | (trans) | (trans) | | LC+L | PG_DN | PG_UP | LC+R | (trans) | (trans) |
+| **Thumb** | | | LGUI | (trans) | LCLK | | | RCLK | SYM | LALT | | | |
+
+### Sym Layer (共通)
+記号入力と、左手側に配置されたダイレクトショートカットキーを担当します。Win 用は `LC` (Ctrl)、Mac 用は `LG` (Command) が自動的に適用されます。
+| row | 1 | 2 | 3 | 4 | 5 | 6 | | 7 | 8 | 9 | 10 | 11 | 12 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| **Top** | TAB | 1 | 2 | 3 | 4 | 5 | | 6 | 7 | * | 9 | 0 | BSPC |
+| **Home** | LCTRL | SelectAll | Save | (trans) | (trans) | (trans) | | - | = | [ | ] | \ | ` |
+| **Bottom** | LSHFT | Undo | Cut | Copy | Paste | Bold | | / | \ | [ | ] | \ | ` |
+| **Thumb** | | | LGUI | (trans) | SPC | | | RCLK | (trans) | RALT | | | |
+
+### Adj Layer (共通)
+ファンクションキーとメディアコントロールを担当します（NAV + SYM の同時押しでアクセス）。
+| row | 1 | 2 | 3 | 4 | 5 | 6 | | 7 | 8 | 9 | 10 | 11 | 12 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| **Top** | TAB | UNLOCK | F7 | F8 | F9 | F12 | | Vol_Dn | Mute | Vol_Up | (trans) | (trans) | BSPC |
+| **Home** | LCTRL | UNLOCK | F4 | F5 | F6 | F11 | | (trans) | (trans) | (trans) | (trans) | (trans) | (trans) |
+| **Bottom** | LSHFT | (trans) | F1 | F2 | F3 | F10 | | (trans) | (trans) | (trans) | (trans) | (trans) | LGUI |
+| **Thumb** | | | LANG2 | NAV | SPC | | | RET | SYM | LANG1 | | | |
 
 ---
 
@@ -56,10 +83,10 @@ input-processors = <&zip_x_scaler 188 100>, <&zip_y_scaler 250 100>;
 ## 📂 フォルダ構成
 OS や配列の好みに応じて `config/` 以下のファイルを切り替えてビルド可能です。
 
-- `mac_onishi/`: Mac 用大西配列 (Command ショートカット)
-- `mac_qwerty/`: Mac 用 QWERTY (Command ショートカット)
-- `win_onishi/`: Windows 用大西配列 (Ctrl ショートカット)
-- `win_qwerty/`: Windows 用 QWERTY (Ctrl ショートカット)
+- `mac_onishi/`: Mac 用大西配列 (**o24-mac**)
+- `mac_qwerty/`: Mac 用 QWERTY (**QWTY-MAC**)
+- `win_onishi/`: Windows 用大西配列 (**o24-w**)
+- `win_qwerty/`: Windows 用 QWERTY (**QWTY-W**)
 
 ---
 

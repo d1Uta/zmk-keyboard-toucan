@@ -24,7 +24,7 @@
 
         // BASE レイヤー: 大西配列 (o24)
         base {
-            display-name = "o24";
+            display-name = "o24-mac";
             bindings = <
                 &kp TAB   &kp Q &kp L &kp U &kp COMMA &kp DOT   &kp F &kp W  &kp R     &kp Y   &kp P    &kp BSPC
                 &kp LCTRL &kp E &kp I &kp A &kp O     &kp MINUS &kp K &kp T  &kp N     &kp S   &kp H    &kp SQT
