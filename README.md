@@ -1,6 +1,6 @@
 # ZMK config for beekeeb Toucan Keyboard (Customized)
 
-[The beekeeb Toucan Keyboard](https://beekeeb.com/toucan-keyboard/) 用のカスタマイズ済み ZMK 設定リポジトリです。本設定は **o24 (大西配列)** をデフォルトとし、トラックパッドの感度やショートカットレイヤーを最適化しています。
+[The beekeeb Toucan Keyboard](https://github.com/beekeeb/zmk-keyboard-toucan) をベースとした、[The beekeeb Toucan Keyboard](https://beekeeb.com/toucan-keyboard/) 用のカスタマイズ済み ZMK 設定リポジトリです。本設定は **o24 (大西配列)** をデフォルトとし、トラックパッドの感度やショートカットレイヤーを最適化しています。
 
 ## 🚀 beekeeb 公式設定からの主な変更点
 
