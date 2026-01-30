@@ -11,6 +11,9 @@
     - Win 用 (Ctrl) と Mac 用 (Command/GUI) の設定を分離して最適化。
 3.  **NAV レイヤーの改善**: 右手側の操作性を考慮し、中指上段の `Backspace` を `Delete` に変更しました。
 4.  **トラックパッド感度の向上**: デフォルトより高速に移動できるよう調整済みです。
+5.  **トラックパッドのレイヤー連動**: 
+    - **NAV レイヤー**: ポインタ移動。親指の `Enter` 位置（`RCLK`）などでクリック操作が可能です。
+    - **SYM レイヤー**: マウスホイール（スクロール）操作に切り替わります。
 
 ---
 
@@ -57,8 +60,8 @@
 | row | 1 | 2 | 3 | 4 | 5 | 6 | | 7 | 8 | 9 | 10 | 11 | 12 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | **Top** | TAB | UNLOCK | F7 | F8 | F9 | F12 | | Vol_Dn | Mute | Vol_Up | (trans) | (trans) | BSPC |
-| **Home** | LCTRL | UNLOCK | F4 | F5 | F6 | F11 | | (trans) | (trans) | (trans) | (trans) | (trans) | (trans) |
-| **Bottom** | LSHFT | (trans) | F1 | F2 | F3 | F10 | | (trans) | (trans) | (trans) | (trans) | (trans) | LGUI |
+| **Home** | LCTRL | UNLOCK | F4 | F5 | F6 | F11 | | Zoom_Out | Zoom_In | (trans) | (trans) | (trans) | (trans) |
+| **Bottom** | LSHFT | (trans) | F1 | F2 | F3 | F10 | | Screenshot | (trans) | (trans) | (trans) | (trans) | LGUI |
 | **Thumb** | | | LANG2 | NAV | SPC | | | RET | SYM | LANG1 | | | |
 
 ---
