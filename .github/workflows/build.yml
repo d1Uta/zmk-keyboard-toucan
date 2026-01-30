@@ -58,7 +58,8 @@ jobs:
 
       - name: Move artifacts to root
         run: |
-          mv artifacts/**/*.uf2 .
+          ls -R artifacts
+          find artifacts -name "*.uf2" -exec mv {} . \;
           rm -rf artifacts
           ls -la *.uf2
 
