@@ -1,5 +1,24 @@
 name: Build ZMK firmware
-on: [push, pull_request, workflow_dispatch]
+on:
+  push:
+    paths:
+      - '**.keymap'
+      - '**.conf'
+      - '**.dtsi'
+      - '**.overlay'
+      - '**/build.yaml'
+      - 'west.yml'
+      - '.github/workflows/**'
+  pull_request:
+    paths:
+      - '**.keymap'
+      - '**.conf'
+      - '**.dtsi'
+      - '**.overlay'
+      - '**/build.yaml'
+      - 'west.yml'
+      - '.github/workflows/**'
+  workflow_dispatch:
 
 jobs:
   build:
@@ -20,3 +39,38 @@ jobs:
       config_path: ${{ matrix.path }}
       build_matrix_path: ${{ matrix.path }}/build.yaml
       archive_name: toucan_${{ matrix.variant }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          pattern: artifact-*
+          merge-multiple: true
+
+      - name: Move artifacts to root
+        run: |
+          mv artifacts/**/*.uf2 .
+          rm -rf artifacts
+          ls -la *.uf2
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add *.uf2
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: update firmware [skip ci]"
+            # 現在のブランチにプッシュ
+            git push origin HEAD:${GITHUB_REF#refs/heads/}
+          fi
