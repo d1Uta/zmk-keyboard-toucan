@@ -58,26 +58,28 @@ jobs:
 
       - name: Organize artifacts
         run: |
-          mkdir -p artifacts
-          ls -R artifacts
+          mkdir -p firmware
           
           # Iterate over downloaded artifacts
           find artifacts -name "*.uf2" -print0 | while IFS= read -r -d '' file; do
             filename=$(basename "$file")
             echo "Processing $filename"
             
+            target_dir=""
             if [[ "$filename" == *"win_onishi"* ]]; then
-              mv "$file" win_onishi/
+              target_dir="firmware/win_onishi"
             elif [[ "$filename" == *"win_qwerty"* ]]; then
-              mv "$file" win_qwerty/
+              target_dir="firmware/win_qwerty"
             elif [[ "$filename" == *"mac_onishi"* ]]; then
-              mv "$file" mac_onishi/
+              target_dir="firmware/mac_onishi"
             elif [[ "$filename" == *"mac_qwerty"* ]]; then
-              mv "$file" mac_qwerty/
+              target_dir="firmware/mac_qwerty"
             else
-              echo "Unknown variant for $filename, moving to root"
-              mv "$file" .
+              target_dir="firmware/misc"
             fi
+            
+            mkdir -p "$target_dir"
+            mv "$file" "$target_dir/"
           done
           
           rm -rf artifacts
@@ -87,8 +89,8 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          # Add uf2 files in variant folders
-          git add **/*.uf2
+          # Add uf2 files in firmware folders
+          git add firmware/**/*.uf2
           
           if git diff --staged --quiet; then
             echo "No changes to commit"

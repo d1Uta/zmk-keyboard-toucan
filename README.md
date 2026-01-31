@@ -1,5 +1,8 @@
 # ZMK config for beekeeb Toucan Keyboard (Customized)
 
+## 📥 最新のファームウェア (.uf2) の取得方法
+> **[こちら (firmware ディレクトリ)](./firmware)** から、ご自身の環境（OS/配列）に合ったフォルダを選択し、最新の `.uf2` ファイルをダウンロードしてください。
+
 [The beekeeb Toucan Keyboard](https://github.com/beekeeb/zmk-keyboard-toucan) をベースとした、[The beekeeb Toucan Keyboard](https://beekeeb.com/toucan-keyboard/) 用のカスタマイズ済み ZMK 設定リポジトリです。本設定は **o24 (大西配列)** をデフォルトとし、トラックパッドの感度やショートカットレイヤーを最適化しています。
 
 ## 🚀 beekeeb 公式設定からの主な変更点
@@ -95,7 +98,7 @@ OS や配列の好みに応じて `config/` 以下のファイルを切り替え
 ## 🛠️ ビルドと導入
 GitHub Actions を使用して自動ビルドされます。
 1. 変更をコミットして GitHub に Push。
-2. ビルド成功後、最新のファームウェア (`.uf2`) が **各設定ディレクトリ（`win_onishi/` など）に自動的にコミットされます**。
+2. ビルド成功後、最新のファームウェア (`.uf2`) が **`firmware/` ディレクトリ内の各フォルダ（`win_onishi/` など）に自動的にコミットされます**。
    - Actions タブの Artifacts からもダウンロード可能です。
 3. キーボードをブートローダーモードにして `.uf2` ファイルをドラッグ＆ドロップ。
 
