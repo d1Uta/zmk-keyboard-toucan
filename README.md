@@ -16,6 +16,7 @@
 5.  **トラックパッドのレイヤー連動**: 
     - **NAV レイヤー**: ポインタ移動。左親指の `Enter` 位置でカーソルホールドが可能です。
     - **SYM レイヤー**: マウスホイール（スクロール）操作に切り替わります。
+6.  **d1Uta 配列の追加**: 大西配列をベースに、カラムスタッガード（縦ズレ）キーボードでの運指に最適化した独自の配列 `d1Uta` を追加しました。
 
 ---
 
@@ -29,6 +30,15 @@
 | **Top** | TAB | Q | L | U | , | . | | F | W | R | Y | P | BSPC |
 | **Home** | LCTRL | E | I | A | O | - | | K | T | N | S | H | SQT |
 | **Bottom** | LSHFT | Z | X | C | V | ; | | G | D | M | J | B | ESC |
+| **Thumb** | | | LGUI | NAV | SPC | | | RET | SYM | RALT | | | |
+
+### Base Layer: d1Uta (Onishi Optimized for Column Staggered)
+カラムスタッガード配列であるToucanに最適化しました。右手ホームポジションを通常から一つ右にずらし、`P, H, B` 列を移動させたレイアウトです。
+| row | 1 | 2 | 3 | 4 | 5 | 6 | | 7 | 8 | 9 | 10 | 11 | 12 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| **Top** | TAB | Q | L | U | , | . | | P | F | W | R | Y | BSPC |
+| **Home** | LCTRL | E | I | A | O | - | | H | K | T | N | S | SQT |
+| **Bottom** | LSHFT | Z | X | C | V | ; | | B | G | D | M | J | ESC |
 | **Thumb** | | | LGUI | NAV | SPC | | | RET | SYM | RALT | | | |
 
 ### Base Layer: QWERTY
@@ -92,6 +102,8 @@ OS や配列の好みに応じて `config/` 以下のファイルを切り替え
 - `mac_qwerty/`: Mac 用 QWERTY (**QWTY MAC**)
 - `win_onishi/`: Windows 用大西配列 (**o24 W**)
 - `win_qwerty/`: Windows 用 QWERTY (**QWTY W**)
+- `d1Uta_win/`: Windows 用 d1Uta配列 (**d1Uta W**)
+- `d1Uta_mac/`: Mac 用 d1Uta配列 (**d1Uta M**)
 
 ---
 

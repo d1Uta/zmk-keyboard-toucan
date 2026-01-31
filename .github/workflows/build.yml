@@ -34,6 +34,10 @@ jobs:
             path: win_onishi
           - variant: win_qwerty
             path: win_qwerty
+          - variant: d1Uta_win
+            path: d1Uta_win
+          - variant: d1Uta_mac
+            path: d1Uta_mac
     uses: ./.github/workflows/zmk_build_fixed.yml
     with:
       config_path: ${{ matrix.path }}
@@ -74,6 +78,10 @@ jobs:
               target_dir="firmware/mac_onishi"
             elif [[ "$filename" == *"mac_qwerty"* ]]; then
               target_dir="firmware/mac_qwerty"
+            elif [[ "$filename" == *"d1Uta_win"* ]]; then
+              target_dir="firmware/d1Uta_win"
+            elif [[ "$filename" == *"d1Uta_mac"* ]]; then
+              target_dir="firmware/d1Uta_mac"
             else
               target_dir="firmware/misc"
             fi
