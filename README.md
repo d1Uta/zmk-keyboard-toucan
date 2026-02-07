@@ -54,7 +54,7 @@
 | row | 1 | 2 | 3 | 4 | 5 | 6 | | 7 | 8 | 9 | 10 | 11 | 12 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | **Top** | ESC | 1 | 2 | 3 | 4 | 5 | | 6 | 7 | 8 | 9 | 0 | DEL |
-| **Home** | LCTRL | (trans) | < | > | / | (trans) | | LEFT | DOWN | UP | RIGHT | (trans) | HOME |
+| **Home** | LCTRL | (trans) | < | > | / | ? | | (trans) | LEFT | DOWN | UP | RIGHT | HOME |
 | **Bottom** | LSHFT | UNLOCK | (trans) | (trans) | (trans) | (trans) | | LC+L | PG_DN | PG_UP | LC+R | (trans) | END |
 | **Thumb** | | | LGUI | (trans) | LCLK | | | RCLK | SYM | LALT | | | |
 
