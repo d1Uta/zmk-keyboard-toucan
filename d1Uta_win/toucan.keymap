@@ -39,7 +39,7 @@
                 &kp ESC 
                   &kp N1 &kp N2 &kp N3 &kp N4 &kp N5   &kp N6   &kp N7    &kp N8    &kp N9    &kp N0 &kp DEL
                 &kp LCTRL &trans &kp LT &kp GT &kp FSLH &kp QMARK   &trans   &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &kp HOME
-                &kp LSHFT &studio_unlock &trans &trans &trans &trans   &trans   &kp LALT(LEFT) &kp PG_DN &kp PG_UP &kp LALT(RIGHT)  &kp END
+                &kp LSHFT &studio_unlock &trans &trans &trans &trans   &trans   &kp LA(LEFT) &kp PG_DN &kp PG_UP &kp LA(RIGHT) &kp END
                                  &kp LGUI &trans &mkp LCLK       &mkp RCLK &mo 2 &kp LALT
             >;
         };
